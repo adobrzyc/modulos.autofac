@@ -1,0 +1,1 @@
+Autofac integration for Modulos.
