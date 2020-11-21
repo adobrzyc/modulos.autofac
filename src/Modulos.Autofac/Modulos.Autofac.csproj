@@ -46,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Modulos" Version="0.1.3" />
+    <PackageReference Include="Modulos" Version="0.1.4" />
   </ItemGroup>
 
 </Project>
