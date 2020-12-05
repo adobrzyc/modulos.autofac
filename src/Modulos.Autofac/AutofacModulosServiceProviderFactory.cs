@@ -8,13 +8,13 @@ using Microsoft.Extensions.Hosting;
 
 namespace Modulos.Autofac
 {
-    public class AutofacModulosServiceProviderFactory : ModulosServiceProviderFactory<ContainerBuilder>
+    public class AutofacModulosServiceProviderFactory : ModulosServiceProviderFactoryBase<ContainerBuilder>
     {
         public AutofacModulosServiceProviderFactory(ModulosApp modulos, HostBuilderContext context, Action<AutoRegistrationModule> modifier = null) 
             : base
             (
                 modulos,
-                () => new ContainerBuilder(), 
+                collection => new ContainerBuilder(),
                 modifier,
                 context, context.Configuration, context.HostingEnvironment
             )
