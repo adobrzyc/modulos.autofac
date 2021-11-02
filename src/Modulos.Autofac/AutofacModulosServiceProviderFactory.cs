@@ -1,16 +1,16 @@
-﻿using System;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
-// ReSharper disable UnusedType.Global
+﻿// ReSharper disable UnusedType.Global
 
 namespace Modulos.Autofac
 {
+    using System;
+    using global::Autofac;
+    using global::Autofac.Extensions.DependencyInjection;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+
     public class AutofacModulosServiceProviderFactory : ModulosServiceProviderFactoryBase<ContainerBuilder>
     {
-        public AutofacModulosServiceProviderFactory(ModulosApp modulos, HostBuilderContext context, Action<AutoRegistrationModule> modifier = null) 
+        public AutofacModulosServiceProviderFactory(ModulosApp modulos, HostBuilderContext context, Action<AutoRegistrationModule> modifier = null)
             : base
             (
                 modulos,

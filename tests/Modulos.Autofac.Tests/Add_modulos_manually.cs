@@ -1,17 +1,17 @@
-using System.Diagnostics.CodeAnalysis;
-using System.IO;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Xunit;
-
 namespace Modulos.Autofac.Tests
 {
+    using System.Diagnostics.CodeAnalysis;
+    using System.IO;
+    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Builder;
+    using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc.Testing;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
+    using Xunit;
+
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    public class Add_modulos_manually 
+    public class Add_modulos_manually
     {
         [Fact]
         public Task execute()
@@ -28,7 +28,7 @@ namespace Modulos.Autofac.Tests
             public Startup()
             {
                 modulos = new ModulosApp();
-                modulos.Initialize<Startup>();
+                modulos.Initialize(typeof(Startup).Assembly);
             }
 
             public void ConfigureServices(IServiceCollection services)
@@ -61,10 +61,7 @@ namespace Modulos.Autofac.Tests
             protected override IHostBuilder CreateHostBuilder()
             {
                 var builder = Host.CreateDefaultBuilder()
-                    .ConfigureWebHostDefaults(x =>
-                    {
-                        x.UseStartup<TStartup>();
-                    });
+                    .ConfigureWebHostDefaults(x => { x.UseStartup<TStartup>(); });
                 return builder;
             }
         }

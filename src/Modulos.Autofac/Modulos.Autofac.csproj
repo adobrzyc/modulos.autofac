@@ -1,52 +1,51 @@
-<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <VersionPrefix>0.0.1</VersionPrefix>
-  </PropertyGroup>
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <VersionPrefix>0.0.1</VersionPrefix>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <LangVersion>latest</LangVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <PackageTags>modulos;autofac;dependency injection;modular application;monolith</PackageTags>
-    <Description>Autofac integration for Modulos.</Description>
-    <PackageIcon>icon.png</PackageIcon>
-  </PropertyGroup>
+    <PropertyGroup>
+        <PackageTags>modulos;autofac;dependency injection;modular application;monolith</PackageTags>
+        <Description>Autofac integration for Modulos.</Description>
+        <PackageIcon>icon.png</PackageIcon>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <PackageProjectUrl>https://github.com/adobrzyc/modulos.autofac</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/adobrzyc/modulos.autofac</RepositoryUrl>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-  </PropertyGroup>
+    <PropertyGroup>
+        <PackageProjectUrl>https://github.com/adobrzyc/modulos.autofac</PackageProjectUrl>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/adobrzyc/modulos.autofac</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <Authors>Adrian Dobrzycki</Authors>
-    <Copyright>Adrian Dobrzycki</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
+    <PropertyGroup>
+        <Authors>Adrian Dobrzycki</Authors>
+        <Copyright>Adrian Dobrzycki</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
-  </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0"/>
+    </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
-  </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0"/>
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Include="..\..\icon.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="..\..\icon.png">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Modulos" Version="0.1.5" />
-  </ItemGroup>
-
+    <ItemGroup>
+        <PackageReference Include="Modulos" Version="0.3.0"/>
+    </ItemGroup>
 </Project>
