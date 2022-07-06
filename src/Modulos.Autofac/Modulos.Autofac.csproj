@@ -4,7 +4,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
         <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
         <LangVersion>latest</LangVersion>
     </PropertyGroup>
@@ -29,15 +29,20 @@
     </PropertyGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0"/>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
-        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0"/>
-        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0"/>
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="5.0.0" />
     </ItemGroup>
 
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+        <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
+    </ItemGroup>
+    
     <ItemGroup>
         <None Include="..\..\icon.png">
             <Pack>True</Pack>
@@ -46,6 +51,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Modulos" Version="0.3.0"/>
+        <PackageReference Include="Modulos" Version="0.4.0" />
     </ItemGroup>
 </Project>
